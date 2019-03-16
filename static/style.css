@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	margin: 0;
+}
+
+.box {
+	display: inline-block;
+	width: 45%;
+	margin: 2%;
+	border: .33rem solid;
+	}
+
+ h2 {
+ 	margin-top: 0;
+ }
+/*
+.widget_wrapper {
+	display: block;
+	margin: 10px 0;
+}*/
+
+.label_wrapper {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.first {
+	vertical-align: top;
+}
