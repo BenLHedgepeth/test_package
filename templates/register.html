@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block main %}
+     <div class='box'>
+        <h1>Main Content</h1>
+    </div><div class='box'>
+        <form action="{{ url_for('member', member=member) }}" method='post'>
+            {{ form.hidden_tag() }}
+            {% if form.errors %}
+                <ul>
+                {% for errors in form.errors.values() %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+            {% for field in form %}
+                    {% if field.id != "csrf_token" %}
+                        <div class='box'>
+                            <div class='widget_wrapper'>
+                                <span class='label_wrapper'>{{ field.label }}</span> {{ field }}
+                            </div>
+                        </div>
+                    {% endif %}
+            {% endfor %}
+            <div class='button_wrapper'>
+                <button type="submit">Submit</button>
+            </div> 
+        </form> 
+    </div>    
+{% endblock %}
